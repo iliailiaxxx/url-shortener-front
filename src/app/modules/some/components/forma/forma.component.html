@@ -1,0 +1,55 @@
+<div class="card card-flush py-4">
+    <!--begin::Card header-->
+    <div class="card-header">
+        <div class="card-title">
+            <h2>General</h2>
+        </div>
+    </div>
+    <!--end::Card header-->
+
+    <!--begin::Card body-->
+    <div class="card-body pt-0">
+        <!--begin::Input group-->
+        <div class="mb-10 fv-row fv-plugins-icon-container">
+            <!--begin::Label-->
+            <label class="required form-label">Product Name</label>
+            <!--end::Label-->
+
+            <form [formGroup]="productForm">
+                <input required type="text" formControlName="name" class="form-control mb-2" placeholder="Product name *" >
+                <label *ngIf="!productForm.pristine&&!productForm.valid" class="text-danger  fs-7">A product name is required and recommended to be unique.</label>
+                <input type="text" formControlName="description" class="form-control mb-2" placeholder="Product description">
+                <input type="text" formControlName="sku" class="form-control mb-2" placeholder="SKU" >
+                <button [disabled]="!productForm.valid" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Submit</button>
+            </form>
+    </div>
+    <!--end::Card header-->
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>This product will be added</p>
+        <div>
+        Name: {{productForm.value.name}}<br>
+        Description: {{productForm.value.description}}<br>
+        SKU: {{productForm.value.sku}}<br>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="subForm()" data-bs-dismiss="modal">Add product</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="card card-flush py-4 m-2">
+  <!--begin::Card header-->
+  <div class="card-header">
+    <!--begin::Card title-->
+    <div class="card-title">
+      <h2><ng-content></ng-content></h2>
+    </div>
+    <!--end::Card title-->
+  </div>
+  <!--end::Card header-->
+
+  <!--begin::Card body-->
+  <div class="card-body pt-0">
+    <span class="text-muted"
+      ><ng-content select="p"></ng-content></span
+    >
+  </div>
+  <!--end::Card body-->
+  <style>
+    .background-image {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <div class="background-image w-100 col-md-8 offset-md-2" style="height: 250px;" [style.backgroundImage]="'url(' + urlString + ')'">
+
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "**": {
+        "target": "http://backendtest",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

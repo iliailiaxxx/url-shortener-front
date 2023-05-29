@@ -1,0 +1,32 @@
+
+<div class="d-flex p-5">
+  <div>
+    <app-new-component></app-new-component>
+    <div class="mt-5">
+      <app-objects></app-objects>
+    </div>
+  </div>
+  <div class="w-100 p-5">
+    <app-forma (passData)="addToArray($event)"></app-forma>
+    <div class="mt-5">
+      <app-excell-dummy></app-excell-dummy>
+    </div>
+  </div>
+</div>
+
+
+<div  style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+  <app-content-template *ngFor="let item of array" [urlString]="item.url">
+
+  {{item.name}}
+  <p>
+    {{item.description}} <br>
+    SKU:{{item.sku}}
+  </p>
+  
+</app-content-template>
+</div>
+
+
+
+
