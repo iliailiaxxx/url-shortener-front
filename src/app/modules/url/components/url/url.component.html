@@ -1,0 +1,22 @@
+<div class="card card-flush py-4">
+    <div class="card-header">
+        <div class="card-title">
+            <h2>Url transformer</h2>
+        </div>
+    </div>
+
+    <div class="card-body pt-0">
+        <div class="mb-10 fv-row fv-plugins-icon-container">
+            <label class="required form-label">Please insert url to make it shorter</label>
+
+            <form [formGroup]="urlForm">
+                <input required type="text" formControlName="url" class="form-control mb-2"
+                    placeholder="url">
+                <label *ngIf="!urlForm.pristine&&!urlForm.valid" class="text-danger  fs-7">fill url</label>
+                <button [disabled]="!urlForm.valid" class="btn btn-success" (click)="subForm()">Submit</button>
+                <div class="mb-10 fv-row fv-plugins-icon-container">
+                    <a href="{{url}}">{{url}}</a>
+                </div>
+            </form>
+        </div>
+    </div>

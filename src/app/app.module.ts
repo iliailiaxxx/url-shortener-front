@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SomeModule } from './modules/some/some.module';
-import { ProfilesModule } from './modules/profiles/profiles.module';
+import { UrlModule } from './modules/url/url.module';
+import { ApiCommunicationService } from './modules/url/services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -12,12 +12,11 @@ import { ProfilesModule } from './modules/profiles/profiles.module';
     AppComponent,
   ],
   imports: [
-    ProfilesModule,
-    SomeModule,
+    HttpClientModule, 
+    UrlModule,
     BrowserModule,
-    AppRoutingModule,
   ],
-  providers: [],
+  providers: [ApiCommunicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

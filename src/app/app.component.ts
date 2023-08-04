@@ -6,7 +6,7 @@ import * as bootstrap from 'bootstrap';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent { 
   title = 'app';
 
 }
